@@ -6,10 +6,9 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
-import HackathonsSection from "@/components/section/hackathons-section";
-import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
+import { Icons } from "@/components/icons";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -147,9 +146,29 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="contact">
+      
+            <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <ContactSection />
+        </BlurFade>
+      </section>
+      <section id="resumedownload">
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <div className="flex w-full justify-center my-8"> 
+              <a
+                href="/Prathamesh_Patil_Product_Designer_Resume.pdf"
+                download="Prathamesh_Patil_PD_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center"
+              >
+                <button className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition shadow-lg">
+                  <Icons.doc className="size-4" />
+                  Download Resume
+                </button>
+              </a>
+            </div>
+
         </BlurFade>
       </section>
     </main>

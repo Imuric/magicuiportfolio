@@ -130,15 +130,21 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="projects">
-        <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <ProjectsSection />
-        </BlurFade>
-      </section>
-      <section id="hackathons">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <HackathonsSection />
-        </BlurFade>
+<section id="tools">
+        <div className="flex min-h-0 flex-col gap-y-4">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Tools</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-2">
+            {DATA.tools.map((tool, id) => (
+              <BlurFade key={tool} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
+                  <span className="text-foreground text-sm font-medium">{tool}</span>
+                </div>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
       </section>
       <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>

@@ -9,7 +9,7 @@ export const DATA = {
   location: "Banglore, IN",
   locationLink: "https://www.google.com/maps/place/banglore",
   description:
-    "Product Desinger",
+    "Prathamesh Patil - Product Designer | M.Des HCI | B.Tech CSE | Fintech & B2B Specialist | User-Centric Design Advocate",
   summary:
     "A Strategic Product Designer and systems thinker who architects scalable, developer-friendly design solutions. My unique background combining an [M.Des in Human-Computer Interaction](/#) with a [B.Tech in Computer Science and Engineering](/#) allows me to act as the critical bridge between executive-level strategy, user advocacy (UX), and developer experience (DX). I specialize in owning the design for complex, multi-tenant B2B and Fintech platforms, from foundational research to C-level stakeholder presentations.",
   avatarUrl: "Profile Photo.jpg",

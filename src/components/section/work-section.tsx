@@ -30,9 +30,31 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+function renderDescription(description: string) {
+  const lines = description
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  return (
+    <ul className="list-disc pl-5 space-y-2 text-justify">
+      {lines.map((line, index) => (
+        <li key={index} className="text-justify">
+          {line.replace(/^[-•\s]+/, "")}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function WorkSection() {
   return (
-    <Accordion type="single" collapsible className="w-full grid gap-6">
+    <Accordion
+      type="single"
+      collapsible
+      defaultValue={DATA.work[0]?.company}
+      className="w-full grid gap-6"
+    >
       {DATA.work.map((work) => (
         <AccordionItem
           key={work.company}
@@ -77,7 +99,7 @@ export default function WorkSection() {
             </div>
           </AccordionTrigger>
           <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
-            {work.description}
+            {renderDescription(work.description)}
           </AccordionContent>
         </AccordionItem>
       ))}
